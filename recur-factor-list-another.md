@@ -56,12 +56,34 @@ const printListRec = (list) => {
     }
 };
 
+const printReverseList = (list) => {
+    let arr = [];
+    let tmp = list;
 
+    while (tmp) {
+        arr.push(tmp.value);
+        tmp = tmp.next;
+    }
 
-console.log(pow(2, 3));
-console.log(factorial(8));
-console.log(sumTo(100));
-console.log(fib(3));
-console.log(printList(list));
-console.log(printListRec(list2));
-``
+    for (var i = arr.length - 1; i >= 0; --i) {
+        console.log(arr[i]);
+    }
+};
+const printReverseListRec = (list) => {
+
+    if (list.next) {
+        printReverseListRec(list.next);
+    }
+    console.log(list.value);
+};
+
+console.log('pow: ' + pow(2, 3));
+console.log('factorial: ', factorial(8));
+console.log('sumTo: ', sumTo(100));
+console.log('fib: ', fib(3));
+console.log('printList: ', printList(list));
+console.log('printListRec: ', printListRec(list2));
+console.log('printReverseListRec: ', printReverseListRec(list));
+console.log('printReverseList: ', printReverseList(list));
+
+```
